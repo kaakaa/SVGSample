@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- ClipPath -->
+  <circle cx="100" cy="100" r="90" fill="pink"/>
+  <circle cx="100" cy="100" r="90" fill="red"/>
+
+  <defs>
+    <clipPath id="clip0" clip-rule="evenodd" clipPathUnits="objectBoundingBox">
+      <rect x="0" y="0" width="0.5" height="0.5"/>
+      <rect x="0" y="0" width="0.5" height="0.5" transform="rotate(180,0.5,0.5)"/>
+    </clipPath>
+  </defs>
+  <circle cx="350" cy="100" r="90" fill="pink"/>
+  <circle clip-path="url(#clip0)" cx="350" cy="100" r="90" fill="red"/>
+
+  <!-- Mask -->
+  <!-- baseが設定されていないとIEでしか動かない…？ -->
+  <!-- http://scriptogr.am/error1009/post/20131203 -->
+
+  <circle cx="100" cy="350" r="90" fill="blue"/>
+
+  <defs>
+    <linearGradient id="Gradient">
+      <stop offset="0" stop-color="white" stop-opacity="0" />
+      <stop offset="1" stop-color="white" stop-opacity="1" />
+    </linearGradient>
+    <mask id="Mask">
+      <circle cx="0" cy="0" r="90" fill="url(#Gradient)" />
+    </mask>
+  </defs>
+
+  <circle cx="350" cy="350" r="90" fill="red"/>
+  <circle cx="350" cy="350" r="90" fill="blue" mask="url(#Mask)"/>
+</svg>

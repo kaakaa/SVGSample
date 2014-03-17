@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<title>svg sample</title>
+	</head>
+	<body>	
+	<script src="./jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script>
+		var dataset = [10, 50, 33, 77, 20, 5, 40, 25];
+		var w = $(window).width();
+		var h = $(window).height();
+
+		var svg = d3.select("body").append("svg").attr({width:w, height:h});
+		svg.selectAll("circle")
+		  .data(dataset)
+		  .enter()
+		  .append("circle")
+		  .transition()
+		  .delay(function(d,i){
+			  return i * 300;
+		  })
+		  .duration(1000)
+		  .ease("bounce")
+		  .each("start", function(){
+			  d3.select(this).attr({
+				  fill: "pink",
+				  r: 0,
+				  cy: h
+			  });
+		  })
+		  .attr({
+			  cx: function (d,i) { return 50 + (i * 150); },
+			  cy: h / 2,
+			  r: function(d){ return d; },
+			  fill: "red"
+		  })
+		  .each("end", function(){
+			  d3.select(this)
+			    .transition()
+			    .duration(800)
+			    .attr({
+				    fill: "pink",
+				    r: 0,
+				    cy:0
+		  	    });
+		  });
+	</script>
+	</body>
+</html>

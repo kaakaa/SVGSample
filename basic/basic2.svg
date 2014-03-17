@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text x="0" y="20">テキストの描画</text>
+  <text x="0" y="50"
+        font-family="serif" font-weight="bold"
+        font-size="20" font-style="italic"
+        text-decoration="underline" fill="#c44">
+    フォントの装飾
+  </text>
+  <text x="0" y="80">
+    <tspan font-weight="bold">部分的な</tspan>装飾
+  </text>
+  <text x="0" y="120" letter-spacing="5" word-spacing="10">
+    文字 単語間隔の調整
+  </text>
+  <text x="0" y="160">
+    <tspan>位</tspan>
+    <tspan dx="5" dy="-5">置</tspan>
+    <tspan dx="5" dy="-5">の</tspan>
+    <tspan dx="5" dy="5">調</tspan>
+    <tspan dx="5" dy="5">整</tspan>
+    <tspan x="0" dy="20">改行</tspan>
+  </text>
+  <path id="textpath"
+        d="M 20,360 C 40,320 260,320 280,260"
+        stroke="black" fill="none" />
+  <text font-size="20" dy="-5">
+    <textPath xlink:href="#textpath">
+      パス上にテキストを描画
+    </textPath>
+  </text>
+
+  <circle cx="400" cy="200" r="100" stroke="black" fill="none"/>
+  <text x="380" y="200" flll="black">
+    Circle
+  </text>
+</svg>

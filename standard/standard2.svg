@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <circle cx ="50" cy="50" r="50" fill="red"/>
+
+  <defs>
+    <linearGradient id="linear">
+      <stop offset="10%" stop-color="white"/>
+      <stop offset="100%" stop-color="black"/>
+    </linearGradient>
+  </defs>
+  <circle cx ="150" cy="50" r="50" fill="url(#linear)"/>
+
+  <defs>
+    <radialGradient id="radial">
+      <stop offset="10%" stop-color="white"/>
+      <stop offset="100%" stop-color="black"/>
+    </radialGradient>
+  </defs>
+  <circle cx ="250" cy="50" r="50" fill="url(#radial)"/>
+
+  <defs>
+    <pattern id="Triangle"
+             width="10" height="10"
+             patternUnits="userSpaceOnUse">
+      <polygon points="5,0 10,10 0,10"/>
+    </pattern>
+  </defs>
+  <circle cx ="50" cy="200" r="50" fill="url(#Triangle)" stroke="black"/>
+
+  <defs>
+    <pattern id="Bubble"
+             width="10" height="10"
+             patternUnits="userSpaceOnUse"
+             viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="5" fill="blue"/>
+    </pattern>
+  </defs>
+  <circle cx ="150" cy="200" r="50" fill="url(#Bubble)" stroke="black"/>
+</svg>

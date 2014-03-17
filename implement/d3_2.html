@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8"/>
+		<title>svg sample</title>
+	</head>
+	<body>	
+	<script src="./jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script>
+		var dataset = [10, 50, 33, 77, 20, 5, 40, 25];
+		var w = $(window).width();
+		var h = $(window).height();
+
+		var drag = d3.behavior.drag()
+		  .on("drag", function(d,i){
+			  var x = (50 + (i * 150)) + d3.event.dx
+			  var y = ($(window).height()/2) + d3.event.dy
+			  d3.select(this)
+			    .attr("transform",function(){
+				    return "translate(" + [x,y] + ")";
+			    });
+		  });
+
+		var svg = d3.select("body").append("svg").attr({width:w, height:h});
+		svg.selectAll("circle")
+		  .data(dataset)
+		  .enter()
+		  .append("circle")
+		  .attr({
+			  cx: function(d,i){ return 50 + (i * 150); },
+			  cy: h / 2,
+			  r: function(d){ return d; },
+			  fill: "red"
+		  })
+		  .call(drag);
+	</script>
+	</body>
+</html>

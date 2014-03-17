@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect x="0" y="0" width="200" height="50"
+        rx="10" ry="10" fill="#fcc" />
+  <foreignObject x="10" y="8" width="180" height="80">
+    <p xmlns="http://www.w3.org/1999/xhtml"
+       style="font-size:12px; margin:0; padding:0;">
+      これはXHTMLなので、自動折り返しされます。
+    </p>
+  </foreignObject>
+
+  <rect x="300" y="0" width="200" height="50" fill="#ccf"/>
+  <foreignObject x="300" y="0" width="180" height="50">
+    <body xmlns="http://www.w3.org/1999/xhtml"
+          style="margin:0; padding:0;">
+      <form action="http://www.google.co.jp/search">
+        <input name="q" />
+        <input type="submit" />
+      </form>
+    </body>
+  </foreignObject>
+
+  <script><![CDATA[
+    function fillRandomColor(e) {
+      var r = Math.floor(Math.random() * 255.0);
+      var g = Math.floor(Math.random() * 255.0);
+      var b = Math.floor(Math.random() * 255.0);
+      e.setAttribute('fill', 'rgb(' + r + ', ' + g + ', ' + b + ')');
+    }
+  ]]></script>
+  <rect id="r1" x="0" y="200" width="200" height="100" stroke="blue"
+        fill="yellow" onclick="fillRandomColor(this);" />
+
+  <script><![CDATA[
+    function fillRandomPosition(e) {
+      var elements = document.getElementsByClassName('random');
+      console.log(elements.length);
+      for(var i=0; i < elements.length; i++){
+        var ele = elements[i];
+        var cx = Math.floor(Math.random() * 160.0);
+        var cy = Math.floor(Math.random() * 160.0);
+        var r = Math.floor(Math.random() * 20.0);
+        ele.setAttribute('cx', 320 + cx);
+        ele.setAttribute('cy', 220 + cy);
+        ele.setAttribute('r', r);
+        console.log(ele);
+      }
+    }
+  ]]></script>
+  <rect id="r1" x="300" y="200" width="200" height="200" stroke="black"
+        fill="blue" onclick="fillRandomPosition(this);" />
+
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+  <circle class="random" fill="cyan"/>
+
+</svg>
